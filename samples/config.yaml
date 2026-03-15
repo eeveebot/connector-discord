@@ -1,0 +1,12 @@
+# Discord connector configuration
+# Bot token is loaded from DISCORD_BOT_TOKEN environment variable
+connections:
+  - name: "my-discord-bot"
+    ident:
+      quitMsg: "eevee.bot shutting down"
+    discord:
+      intents:
+        - "GUILDS"
+        - "GUILD_MESSAGES"
+        - "MESSAGE_CONTENT"
+    postConnect: []
