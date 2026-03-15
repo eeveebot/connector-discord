@@ -1,6 +1,6 @@
 {
   "name": "@eeveebot/connector-discord",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "the eevee discord connector",
   "keywords": [
     "eevee"
@@ -28,7 +28,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@eeveebot/libeevee": "^3.6.0",
+    "@eeveebot/libeevee": "^3.6.2",
     "chokidar": "^5.0.0",
     "discord.js": "^14.25.1",
     "irc-framework": "^4.14.0",
