@@ -28,7 +28,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@eeveebot/libeevee": "^4.0.0",
+    "@eeveebot/libeevee": "^4.0.1",
     "chokidar": "^5.0.0",
     "discord.js": "^14.25.1",
     "irc-framework": "^4.14.0",
