@@ -10,7 +10,7 @@ import { GatewayIntentBits } from 'discord.js';
 
 // 1st party
 import { DiscordClient } from './lib/discord-client.mjs';
-import { NatsClient, handleSIG, log, eeveeLogo } from '@eeveebot/libeevee';
+import { NatsClient, handleSIG, log, eeveeLogo, initializeSystemMetrics, setupHttpServer } from '@eeveebot/libeevee';
 
 // Record module startup time for uptime tracking
 const moduleStartTime = Date.now();
@@ -31,6 +31,16 @@ log.info(`eevee-discord-connector v${connectorVersion} starting up`, {
 const discordClients: DiscordClient[] = [];
 const natsClients: InstanceType<typeof NatsClient>[] = [];
 const natsSubscriptions: string[] = [];
+
+// Initialize system metrics
+initializeSystemMetrics('connector-discord');
+
+// Setup HTTP server for metrics and health checks
+setupHttpServer({
+  port: process.env.HTTP_API_PORT || '9000',
+  serviceName: 'connector-discord',
+  natsClients: natsClients,
+});
 
 //
 // Do whatever teardown is necessary before calling common handler
