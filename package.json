@@ -1,6 +1,7 @@
 {
   "name": "@eeveebot/connector-discord",
   "version": "1.2.21",
+  "type": "module",
   "description": "the eevee discord connector",
   "keywords": [
     "eevee"
@@ -16,6 +17,7 @@
     "update-libraries": "npm install --save @eeveebot/libeevee@latest"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
     "@types/chokidar": "^1.7.5",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^18.19.130",
@@ -28,12 +30,9 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@eeveebot/libeevee": "^4.2.2",
+    "@eeveebot/libeevee": "^4.2.5",
     "chokidar": "^5.0.0",
     "discord.js": "^14.25.1",
-    "irc-framework": "^4.14.0",
-    "js-yaml": "^4.1.1",
-    "nats": "^2.29.3",
-    "winston": "^3.19.0"
+    "js-yaml": "^4.1.1"
   }
 }
