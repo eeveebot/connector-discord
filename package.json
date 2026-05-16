@@ -1,6 +1,6 @@
 {
   "name": "@eeveebot/connector-discord",
-  "version": "1.2.21",
+  "version": "1.2.22",
   "type": "module",
   "description": "the eevee discord connector",
   "keywords": [
