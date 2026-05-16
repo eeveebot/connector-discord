@@ -14,6 +14,7 @@ import { NatsClient, handleSIG, log, eeveeLogo, initializeSystemMetrics, setupHt
 
 // Record module startup time for uptime tracking
 const moduleStartTime = Date.now();
+const moduleVersion = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version as string;
 
 // Every module has a uuid
 const moduleUUID = '56B3C640-CAEC-4A65-B648-AE0D70C7D041'; // Generated UUID for this module
@@ -121,6 +122,7 @@ void nats
       // Send uptime back via the ephemeral reply channel
       const uptimeResponse = {
         module: 'connector-discord',
+        version: moduleVersion,
         uptime: uptime,
         uptimeFormatted: `${Math.floor(uptime / 86400000)}d ${Math.floor((uptime % 86400000) / 3600000)}h ${Math.floor((uptime % 3600000) / 60000)}m ${Math.floor((uptime % 60000) / 1000)}s`,
       };
